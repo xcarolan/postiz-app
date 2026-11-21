@@ -49,7 +49,7 @@ export type AllProvidersSettings =
   | ProviderExtension<'devto', DevToSettingsDto>
   | ProviderExtension<'hashnode', HashnodeSettingsDto>
   | ProviderExtension<'wordpress', WordpressDto>
-  | ProviderExtension<'git-blog', GitBlogDto>
+  | ProviderExtension<'gitblog', GitBlogDto>
   | ProviderExtension<'listmonk', ListmonkDto>
   | ProviderExtension<'gmb', GmbSettingsDto>
   | ProviderExtension<'facebook', FacebookDto>
@@ -89,7 +89,7 @@ export const allProviders = (setEmpty?: any) => {
     { value: MediumSettingsDto, name: 'medium' },
     { value: DevToSettingsDto, name: 'devto' },
     { value: WordpressDto, name: 'wordpress' },
-    { value: GitBlogDto, name: 'git-blog' },
+    { value: GitBlogDto, name: 'gitblog' },
     { value: HashnodeSettingsDto, name: 'hashnode' },
     { value: ListmonkDto, name: 'listmonk' },
     { value: GmbSettingsDto, name: 'gmb' },
