@@ -156,7 +156,7 @@ export const Providers = [
     component: WordpressProvider,
   },
   {
-    identifier: 'git-blog',
+    identifier: 'gitblog',
     component: GitBlogProvider,
   },
   {

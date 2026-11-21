@@ -37,7 +37,9 @@ type TreeEntry = {
   'Git Blog commits the post as a Markdown file (with YAML front matter) to a GitHub repository that a static site builds from: the content is markdown, the title setting is required, categories must come from the categoriesList tool, the featured picture is the main_image setting, and any attached pictures are added to the end of the post'
 )
 export class GitBlogProvider extends SocialAbstract implements SocialProvider {
-  identifier = 'git-blog';
+  // No dash: Postiz only starts Temporal workers for dash-free identifiers
+  // (a dash marks a variant sharing another provider's queue).
+  identifier = 'gitblog';
   name = 'Git Blog (Markdown)';
   isBetweenSteps = false;
   editor = 'markdown' as const;
