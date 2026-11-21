@@ -12,6 +12,7 @@ import { GitBlogDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-setti
 import slugify from 'slugify';
 import { Tool } from '@gitroom/nestjs-libraries/integrations/tool.decorator';
 import { Rules } from '@gitroom/nestjs-libraries/chat/rules.description.decorator';
+import { readOrFetch } from '@gitroom/helpers/utils/read.or.fetch';
 
 const GITHUB_API = 'https://api.github.com';
 
@@ -361,7 +362,7 @@ export class GitBlogProvider extends SocialAbstract implements SocialProvider {
     const extension =
       (path.split('?')[0].split('.').pop() || 'jpg').toLowerCase() || 'jpg';
     const fileName = `${name}.${extension}`;
-    const content = (await this.readOrFetch(path)).toString('base64');
+    const content = Buffer.from(await readOrFetch(path)).toString('base64');
 
     return {
       entry: {
